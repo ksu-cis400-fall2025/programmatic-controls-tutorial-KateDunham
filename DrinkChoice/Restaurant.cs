@@ -27,12 +27,8 @@ namespace DrinkChoice
             foreach (SodaType soda in Enum.GetValues(typeof(SodaType)))
             {
                 SodaChoice choice = new SodaChoice(soda);
+                choice.PropertyChanged += OnChosenChange;
                 PossibleSodas.Add(choice);
-            }
-
-            foreach (SodaChoice choice in PossibleSodas)
-            {
-                choice.PropertyChanged += OnChosenChange; 
             }
         }
 
